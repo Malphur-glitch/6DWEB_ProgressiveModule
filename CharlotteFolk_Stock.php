@@ -50,17 +50,17 @@ $products = [
 ];
 
 $tax = 20;
-function get_reorder_message($stock){
+function get_reorder_message(int $stock) : string{
     $message = ($stock < 10) ? "Yes" : "No";
     return $message;
 }
 
-function get_total_value($price, $stock){
+function get_total_value(float $price, int $stock): float {
     $totalValue = $price * $stock;
     return $totalValue;
 }
 
-function get_tax_due($price, $stock, $tax){
+function get_tax_due(float $price, int $stock, int $tax): float {
     $totalValue = get_total_value($price, $stock);
     $taxDue = ($tax / 100) * $totalValue;
     return $taxDue;
@@ -72,7 +72,7 @@ function get_tax_due($price, $stock, $tax){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charlotte Folk Stock</title>
+    <title>Functions</title>
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
