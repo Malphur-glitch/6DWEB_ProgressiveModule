@@ -22,7 +22,8 @@ h1 {
   color: #fcba63;
 }
 
-h2 {
+h2{
+  font-family: "Georgia", serif;
   font-weight: 700;
   font-size: 1em;
   text-transform: uppercase;

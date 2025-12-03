@@ -1,30 +1,25 @@
 <?php 
 declare(strict_types=1);
 
-function create_logo(){
-    return 'img src = "img/logo.png" alt = "Charlotte Folk Logo"> ';
-}
-
-function create_copyright_notice(){
-    $year = date('Y');
-    $message = '&copy; ' . $year;
-    return $message;
-}
-
  $name = "new";
  $list = [
     "Folk Index Cropped Leather Jacket",
     "City Knit Sweater",
     "Style Index Oversized Hoodie",
-    "CF City Tee"
+    "CF City Tee",
+    "City Index Caps",
+    "CF Black Leather Belt",
+    "CF Slides"
  ];
 
  $clothingPrice = [
-    'Folk Index Cropped Leather Jacket' => 79.99,
-    'City Knit Sweater' => 44.99,
-    'Style Index Oversized Hoodie' => 39.50,
-    'CF City Tee' => 21.00,
-
+    'Folk Index Cropped Leather Jacket' => 2999.00,
+    'City Knit Sweater' => 2649.00,
+    'Style Index Oversized Hoodie' => 2326.00,
+    'CF City Tee' => 1236.00,
+    'City Index Caps' => 899.99,
+    'CF Black Leather Belt' => 459.50,
+    'CF Slides' => 1290.00
  ];
 
 
@@ -59,6 +54,9 @@ $price = 19.99;
     <p><?= $list[1] ?> </p>
     <p><?= $list[2] ?> </p>
     <p><?= $list[3] ?> </p>
+    <p><?= $list[4] ?> </p>
+    <p><?= $list[5] ?> </p>
+    <p><?= $list[6] ?> </p>
 
 
     <h2>Today's Clothing Deals:</h2>
@@ -70,15 +68,21 @@ $price = 19.99;
                     "City Knit Sweater" => "CKS",
                     "Style Index Oversized Hoodie" => "SIOH",
                     "CF City Tee" => "CFCT",
+                    "City Index Caps" => "CIC",
+                    "CF Black Leather Belt" => "CFBLB",
+                    "CF Slides" => "CFS",
                     default => "None"
                 };
             ?>">
                 <?php
                     echo match($item) {
-                        "Folk Index Cropped Leather Jacket" => "Get 20% off on this item priced at $" . $clothingPrice['Folk Index Cropped Leather Jacket'] . " for this month's sale!",
-                        "City Knit Sweater" => "Buy one and get a free tote bag for this sweater priced at $" . $clothingPrice['City Knit Sweater'] . "!",
-                        "Style Index Oversized Hoodie" => "This hoodie is previously priced at $" . $clothingPrice['Style Index Oversized Hoodie'] . ", now at 15% off!",
-                        "CF City Tee" => "Get a free pin with this tee priced at $" . $clothingPrice['CF City Tee'] . "!",
+                        "Folk Index Cropped Leather Jacket" => "Get 20% off on the leather jacket priced at Php " . $clothingPrice['Folk Index Cropped Leather Jacket'] . " for this month's sale!",
+                        "City Knit Sweater" => "Buy one and get a free tote bag for the knit sweater priced at Php " . $clothingPrice['City Knit Sweater'] . "!",
+                        "Style Index Oversized Hoodie" => "The style index oversized hoodie is previously priced at Php " . $clothingPrice['Style Index Oversized Hoodie'] . ", now at 15% off!",
+                        "CF City Tee" => "Get a free pin with the white tee priced at Php " . $clothingPrice['CF City Tee'] . "!",
+                        "City Index Caps" => "Get 10% off on CF index caps priced at Php " . $clothingPrice['City Index Caps'] . "!",
+                        "CF Black Leather Belt" => "Buy the black leather belt priced at Php " . $clothingPrice['CF Black Leather Belt'] . " and get 5% off on your next purchase!",
+                        "CF Slides" => "Get CF slides priced at Php " . $clothingPrice['CF Slides'] . ", now at 15% off!",
                         default => "No specials for today..."
                     };
                 ?>
@@ -95,7 +99,7 @@ $price = 19.99;
         <?php foreach ($clothingPrice as $item => $price) { ?>
             <tr>
                 <td><?= $item ?></td>
-                <td>$<?= $price ?></td>
+                <td>P<?= $price ?></td>
             </tr>
         <?php } ?>
     </table>
@@ -106,7 +110,7 @@ $price = 19.99;
         <?php
         while($counter <= $limit){
            echo $counter;
-            echo ' shirts cost $';
+            echo ' shirts cost Php ';
             $total = $price * $counter;
             $discount = 0.02;
             $discount += 0.02;
